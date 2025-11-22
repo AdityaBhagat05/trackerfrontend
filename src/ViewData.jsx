@@ -1,6 +1,6 @@
 import API_URL from './config';
 import { useState, useEffect } from "react";
-import "./Data.css";
+import "./data.css";
 import { authenticatedFetch } from "./api";
 
 import {
