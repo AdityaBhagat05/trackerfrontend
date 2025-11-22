@@ -1,0 +1,272 @@
+/* Use same base font and backdrop */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: url("./41051941_1.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  box-sizing: border-box;
+  color: #f5f5f5;
+}
+
+/* Main wrapper */
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Title */
+.dashboard-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+/* Info cards */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: rgba(21, 100, 191, 0.9);
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid #d4dce6;
+  text-align: center;
+}
+
+.card-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.card-label {
+  font-size: 14px;
+  color: #e6e9ef;
+}
+
+.charts-row {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Aligns both vertically */
+  gap: 40px;               /* Equal space between charts */
+  width: 100%;
+  max-width: 1000px;       /* Keeps them centered even on wide screens */
+  margin: 0 auto 40px auto; /* Centers container in page */
+  flex-wrap: wrap;         /* Allows wrapping on smaller screens */
+}
+
+.chart-box {
+  flex: 1 1 400px;         /* Makes each chart flexible but evenly sized */
+  max-width: 450px;
+  min-width: 350px;
+  background: rgba(21, 100, 191, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid #d4dce6;
+  text-align: center;
+}
+
+.chart-box h3 {
+  color: #f5f5f5;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Layout for list + details panel */
+.list-and-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Left list box */
+.left-list {
+  background: rgba(21, 100, 191, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  width: 480px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid #d4dce6;
+}
+
+/* Right details box */
+.right-details {
+  background: rgba(21, 100, 191, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  width: 540px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid #d4dce6;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+/* Search header */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.list-header h3 {
+  color: #f5f5f5;
+  margin: 0;
+}
+
+.list-header input {
+  width: 200px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #c2ccd5;
+  font-size: 14px;
+  background: #f9fbfc;
+  color: #111;
+}
+
+.list-header button {
+  background: #df1a14 !important;
+  color: #f5f5f5 !important;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.list-header button:hover {
+  background: #b01510 !important;
+}
+
+/* Project table */
+.projects-table {
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+/* .projects-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 90px 100px;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+} */
+.projects-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 120px; /* Code | Name | Status */
+  gap: 8px;
+  align-items: start; /* allow multi-line names to wrap properly */
+  padding: 10px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  word-break: break-word; /* keep long names from overflowing */
+}
+
+.projects-row div { /* make sure each cell respects the grid column */
+  min-height: 1.5em;
+}
+
+.projects-row:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.projects-row.selected {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.projects-row-head {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Inputs inside details */
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c2ccd5;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #f9fbfc;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+input:disabled {
+  background: #e9eff4;
+}
+
+/* Buttons inside details */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #df1a14 !important;
+  border: none;
+  color: #f5f5f5 !important;
+  font-size: 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background: #b01510;
+}
+
+/* Scrollbar styling for better visibility */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #df1a14 !important;
+  border: none;
+  color: #f5f5f5 !important;
+  font-size: 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background: #b01510;
+}
